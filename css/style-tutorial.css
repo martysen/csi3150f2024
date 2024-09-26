@@ -8,14 +8,21 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif; /*will show later how to integrate 
+  google fonts*/
+  /* how to declare and use css variables  */
+  --primary-background-color: #def2c8;
 }
 
 body {
+  background-image: url("../assets/img/detroit.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: bisque;
 }
 
 #primary-heading {
-  color: blue;
+  color: var(--primary-background-color);
   border: 10px solid red;
   border-radius: 10px;
   padding: 15px;
@@ -23,5 +30,70 @@ body {
 }
 
 .heading-group {
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* tutorial for laying elements out on the html document 
+    replicating the news subsection on the oakland.edu webpage
+*/
+/* root node of the section */
+.new-events {
+  padding: 10px;
+}
+
+/* immediate child of root node */
+.section-title {
+  padding: 10px;
+  margin-bottom: 20px; /*seprate next child vertically from this one*/
+  width: 100%; /*max-width, min-width. Same from height property*/
+}
+
+.section-title-text {
+  padding: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: underline;
+  color: rgb(216, 190, 56);
+}
+
+.media-wrapper {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly; /*space-around, space-between, space-evenly*/
+  align-items: center;
+  flex-wrap: wrap;
+  /* flex-grow: and flex-shrink */
+}
+
+.news-container {
+  border: 1px solid rgb(142, 124, 5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.news-media {
+  padding: 15px;
+  margin-bottom: 45px;
+  width: 150px;
+  max-width: 100px;
+  height: 150px;
+  max-height: 100px;
+}
+
+.news-images {
+  /* need to fix the size */
+  padding: 5px;
+  width: 150px;
+  height: 150px;
+  /* content fit */
+}
+
+.news-text > a > h3 {
+  padding: 10px;
+  color: rgb(51, 49, 4);
+  font-size: 18px;
+  font-weight: 300;
+  text-decoration: none;
 }
