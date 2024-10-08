@@ -1,0 +1,82 @@
+/* import the google api font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap");
+
+*,
+*::before,
+*::after {
+  /* supress browser defaults and select alt box model */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif, Tahoma;
+  /* set variables for colors */
+  --bg-primary: var(#2d2a32);
+  --bg-secondary: var(#b07156);
+  --font-color-primary: var(#f4f4f9);
+  --font-color-secondary: var(#e2c044);
+  --backup-color: var(#de6b48);
+}
+
+/* this styling is desktop first */
+body {
+  height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* style the header / navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px; /*might need change based on screen used to develop*/
+  padding: 0 50px;
+}
+
+/* style the children of the header  */
+.navbar h2 {
+  color: var(--font-color-primary);
+  font-weight: 700;
+}
+
+.navbar nav ul {
+  display: flex; /*double check to use align items and justify content prop*/
+}
+
+.navbar ul li {
+  list-style: none;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--font-color-secondary);
+  font-size: 16px; /*shazam~~subjective*/
+  margin-right: 25px; /*shazam*/
+  transition: color 0.3 ease; /*animation must be triggered by an event*/
+}
+
+/* the event that triggers line 54 and specify outcome of transition */
+.navbar ul li:hover a {
+  color: var(--font-color-primary);
+}
+
+/* remove the margin of the rightmost list item : see line 53 */
+.navbar ul li:last-child a {
+  margin-right: 0;
+}
+
+/* style of the hire me btn */
+.hire-btn {
+  background: var(--backup-color);
+  color: var(--font-color-primary);
+  padding: 6px 16px; /*shazam*/
+  border: none;
+  font-size: 16px; /*shazam*/
+  cursor: pointer;
+  border-radius: 6px; /*shazam*/
+  transition: background 0.3s ease;
+}
+
+.hire-btn:hover {
+  background: var(--font-color-secondary);
+  color: var(--bg-primary);
+}
